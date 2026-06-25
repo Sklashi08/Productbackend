@@ -1,4 +1,4 @@
- const Product = require("./productController.js");
+ const Product = require("../model/productModel.js");
 const user = require("../model/productModel.js");
 
 //////create product
