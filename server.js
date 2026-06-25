@@ -6,11 +6,17 @@ const express = require("express");
 const mongoose = require("mongoose");
 const userRoute = require("./route/user.route.js");
 const productRoute = require("./route/productRoute.js");
+const cors = require("cors");
 
 const app = express();
 const PORT = process.env.PORT;
 
 app.use(express.json());
+app.use(cors({
+  origin: "http://localhost:5173",
+  methods: ["GET", "POST", "PUT", "DELETE"],
+  credentials: true
+}));
 app.get("/", (req, res) => {
   res.send("Hello Progress! Your route is working.");
 });
